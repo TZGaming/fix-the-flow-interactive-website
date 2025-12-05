@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+
+a {
+    color: var(--color-secondary);
+}
+
+.header-container {
+    background-color: var(--color-primary);
+    padding-top: 10px;
+    .header-links {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+        gap: 10px;
+    }
+    .hamburger-menu {
+        .menu-toggle {
+            width: 30px;
+            height: 30px;
+            font-size: var(--font-size-s);
+        }
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.darkmode {
+    background-color: black;
+    color: var(--color-secondary);
+}
+
+.interaction-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    button {
+        width: 75px;
+        height: 35px;
+    }
+    .flags {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        div {
+        cursor: pointer;
+        transition: scale 0.2s ease;
+            img {
+                border-radius: 5px;
+            }
+        }
+        :hover {
+            scale: 1.075;
+        }
+    }
+}
+
+main {
+    margin: 8px;
+}
+
+.museum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
+    .museum {
+        text-align: center;
+        img {
+            border-radius: 10px;
+            width: 300px;
+        }
+    }
+}
