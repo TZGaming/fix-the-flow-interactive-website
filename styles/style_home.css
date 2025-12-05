@@ -82,3 +82,10 @@ main {
         }
     }
 }
+
+footer {
+    background-color: var(--color-primary);
+    ul {
+        display: flex;
+    }
+}
