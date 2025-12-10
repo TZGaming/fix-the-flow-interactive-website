@@ -1,16 +1,29 @@
-// Dark mode toggle + klik event
-let darkmode = document.querySelector('.darkmodeBtn')
+// Dark/light mode toggle + click event
+let darkmode = document.querySelector('.LightDarkBtn');
 
 darkmode.addEventListener('click', function() {
-    document.body.classList.add('darkmode');
-})
+    document.body.classList.toggle('darkmode');
 
-// Light mode toggle + klik event
-let lightmode = document.querySelector('.lightmodeBtn')
+    // Card darkmode togglen
+    document.querySelectorAll(".blog").forEach(card => {
+        card.classList.toggle("darkmode");
+    });
+    document.querySelectorAll(".museum").forEach(card => {
+        card.classList.toggle("darkmode");
+    });
+    document.querySelectorAll("footer").forEach(card => {
+        card.classList.toggle("darkmode");
+    });
 
-lightmode.addEventListener('click', function() {
-    document.body.classList.remove('darkmode');
-})
+    document.querySelectorAll(".header-container").forEach(card => {
+        card.classList.toggle("darkmode");
+    });
+
+    darkmode.classList.toggle('LightDarkBtn');
+
+    document.getElementById("LightDarkText").innerHTML =
+        document.body.classList.contains('darkmode') ? "Light Mode" : "Dark Mode";
+});
 
 // English HTML toggle + klik event
 let englishPageTrigger = document.querySelector('.englishPage')
@@ -27,6 +40,28 @@ dutchPageTrigger.addEventListener('click', function() {
 })
 
 
+const overlay = document.getElementById('light-overlay');
+
+// Touchscreen detectie
+const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+if (!isTouchDevice) {
+    document.addEventListener('mousemove', (event) => {
+        if (!document.body.classList.contains('darkmode')) {
+            overlay.style.display = 'none';
+            return;
+        }
+
+        overlay.style.display = 'block';
+
+        const x = event.clientX;
+        const y = event.clientY;
+
+        overlay.style.background = `radial-gradient(circle 75px at ${x}px ${y}px, rgba(255,255,255,0.2), transparent 80%)`;
+    });
+} else {
+    overlay.style.display = 'none';
+}
 
 
     // (function () {
