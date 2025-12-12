@@ -1,5 +1,5 @@
 // Dark/light mode toggle + click event
-let darkmode = document.querySelector('.LightDarkBtn');
+let darkmode = document.querySelector('.DarkBtn');
 
 darkmode.addEventListener('click', function() {
     document.body.classList.toggle('darkmode');
@@ -19,10 +19,28 @@ darkmode.addEventListener('click', function() {
         card.classList.toggle("darkmode");
     });
 
-    darkmode.classList.toggle('LightDarkBtn');
+    const icon = document.getElementById("LightDarkIcon");
 
-    document.getElementById("LightDarkText").innerHTML =
-        document.body.classList.contains('darkmode') ? "Light Mode" : "Dark Mode";
+    icon.addEventListener("click", () => {
+        if (LightDarkIcon.classList.contains('DarkBtn')) {
+            LightDarkIcon.classList.replace('LightBtn', 'DarkBtn');
+        } else {
+            LightDarkIcon.classList.replace('DarkBtn', 'LightBtn');
+        }
+
+        if (document.body.classList.contains('darkmode')) {
+            icon.src = "./assets/svg/moon.svg";
+            icon.alt = "Donkere modus";
+        } else {
+            icon.src = "./assets/svg/sun.svg";
+            icon.alt = "Lichte modus";
+        }
+
+        // --- Animation trigger ---
+        icon.classList.remove("rotate-animation");
+        void icon.offsetWidth;
+        icon.classList.add("rotate-animation");
+    });
 });
 
 // English HTML toggle + klik event
@@ -39,22 +57,14 @@ dutchPageTrigger.addEventListener('click', function() {
     window.location.href = "./index.html";
 })
 
+// Hamburger menu toggle
+let hamburger = document.querySelector('.menu-toggle');
+let headerLinks = document.querySelector('.header-links');
 
-
-    // (function () {
-    //     const btn = document.querySelector('.menu-toggle');
-    //     const headerContainer = document.querySelector('.header-container');
-    //     if (!btn || !headerContainer) return;
-    //     btn.addEventListener('click', function () {
-    //         const expanded = btn.getAttribute('aria-expanded') === 'true';
-    //         btn.setAttribute('aria-expanded', String(!expanded));
-    //         headerContainer.classList.toggle('open');
-    //     });
-
-    //     window.addEventListener('resize', function () {
-    //         if (window.innerWidth > 768) {
-    //             headerContainer.classList.remove('open');
-    //             btn.setAttribute('aria-expanded', 'false');
-    //         }
-    //     });
-    // })();
+hamburger.addEventListener('click', function () {
+    if (headerLinks.classList.contains('hidden')) {
+        headerLinks.classList.replace('hidden', 'header-links');
+    } else {
+        headerLinks.classList.replace('header-links', 'hidden');
+    }
+});
