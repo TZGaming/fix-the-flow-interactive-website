@@ -4,7 +4,7 @@ let darkmode = document.querySelector('.LightDarkBtn');
 darkmode.addEventListener('click', function() {
     document.body.classList.toggle('darkmode');
 
-    // Card darkmode togglen
+    // Elementen op de website veranderen van style
     document.querySelectorAll(".blog").forEach(card => {
         card.classList.toggle("darkmode");
     });
@@ -39,29 +39,6 @@ dutchPageTrigger.addEventListener('click', function() {
     window.location.href = "./index.html";
 })
 
-
-const overlay = document.getElementById('light-overlay');
-
-// Touchscreen detectie
-const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-if (!isTouchDevice) {
-    document.addEventListener('mousemove', (event) => {
-        if (!document.body.classList.contains('darkmode')) {
-            overlay.style.display = 'none';
-            return;
-        }
-
-        overlay.style.display = 'block';
-
-        const x = event.clientX;
-        const y = event.clientY;
-
-        overlay.style.background = `radial-gradient(circle 75px at ${x}px ${y}px, rgba(255,255,255,0.2), transparent 80%)`;
-    });
-} else {
-    overlay.style.display = 'none';
-}
 
 
     // (function () {
