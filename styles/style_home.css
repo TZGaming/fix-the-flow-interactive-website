@@ -46,10 +46,34 @@ body:not(.darkmode) {
     background-color: var(--color-primary);
     padding-top: 10px;
     transition: background 0.4s ease, color 0.4s ease;
+    a {
+        transition: color 0.15s ease;
+    }
+
+    a:hover {
+        color: var(--color-accent);
+    }
+    .logo-container {
+        display: none;
+        @media (min-width: 992px) {
+            display: flex;
+            position: absolute;
+            padding: 10px;
+        }
+    }
+
+    .links-container {
+        @media (min-width: 992px) {
+            position: relative;
+        }
+    }
     .header-links {
         margin-top: 10px;
         display: flex;
         flex-direction: column;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -65,8 +89,8 @@ body:not(.darkmode) {
     }
 }
 
-a {
-    color: var(--color-secondary);
+.logo {
+    width: 120px;
 }
 
 .LightBtn {
@@ -146,6 +170,10 @@ a {
     }
 }
 
+a {
+    color: var(--color-secondary);
+}
+
 ul {
     list-style: none;
 }
@@ -209,11 +237,21 @@ footer {
     ul.page-links {
         display: flex;
         flex-direction: column;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
         text-align: center;
         justify-content: center;
         align-items: center;
         padding-top: 20px;
         gap: 10px;
+        a {
+            transition: color 0.15s ease;
+        }
+
+        a:hover {
+            color: var(--color-accent);
+        }
     }
     ul.socials {
         display: flex;

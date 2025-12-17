@@ -60,11 +60,18 @@ dutchPageTrigger.addEventListener('click', function() {
 // Hamburger menu toggle
 let hamburger = document.querySelector('.menu-toggle');
 let headerLinks = document.querySelector('.header-links');
+let logoContainer = document.querySelector('.logo-container');
 
 hamburger.addEventListener('click', function () {
     if (headerLinks.classList.contains('hidden')) {
         headerLinks.classList.replace('hidden', 'header-links');
     } else {
         headerLinks.classList.replace('header-links', 'hidden');
+    }
+
+    if (logoContainer.classList.contains('hidden')) {
+        logoContainer.classList.replace('hidden', 'logo-container');
+    } else {
+        logoContainer.classList.replace('logo-container', 'hidden');
     }
 });

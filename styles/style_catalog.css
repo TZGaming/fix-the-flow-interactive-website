@@ -47,12 +47,16 @@ body:not(.darkmode) {
         margin-top: 10px;
         display: flex;
         flex-direction: column;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
         text-align: center;
         justify-content: center;
         align-items: center;
         padding-bottom: 20px;
         gap: 10px;
     }
+    
     .hamburger-menu {
         .menu-toggle {
             width: 30px;
@@ -60,6 +64,25 @@ body:not(.darkmode) {
             font-size: var(--font-size-s);
         }
     }
+
+    .logo-container {
+        display: none;
+        @media (min-width: 992px) {
+            display: flex;
+            position: absolute;
+            padding: 10px;
+        }
+    }
+
+    .links-container {
+        @media (min-width: 992px) {
+            position: relative;
+        }
+    }
+}
+
+.logo {
+    width: 120px;
 }
 
 a {
@@ -202,6 +225,9 @@ footer {
     ul.page-links {
         display: flex;
         flex-direction: column;
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
         text-align: center;
         justify-content: center;
         align-items: center;
