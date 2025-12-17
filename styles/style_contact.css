@@ -186,48 +186,13 @@ button:hover {
     scale: 1.1;
 }
 
-section {
-    .book-grid {
-        display: flex;
+article {
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 992px) {
         flex-direction: row;
-        gap: 20px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 1rem;
-        .book {
-            scroll-snap-align: start;
-            width: 300px;
-            background: #ebebeb;
-            padding: 20px;
-            border-radius: 15px;
-            transition: background 0.4s ease, color 0.4s ease;
-            img {
-                height: 225px;
-                width: 250px;
-                transition: scale 0.2s ease;
-            }
-            img:hover {
-                scale: 0.96;
-                cursor: pointer;
-            }
-            h1 {
-                font-size: 30px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-            p {
-                font-weight: bold;
-            }
-            .jaar {
-                margin-top: 30px;
-            }
-            .authorInfo {
-                line-height: 0.1;
-            }
-        }
+        justify-content: center;
+        gap: 385px;
     }
 }
 

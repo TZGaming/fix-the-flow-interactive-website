@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Embassay of the Free Mind</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/style_contact.css">
     <link rel="stylesheet" href="https://kurollos.github.io/look-and-feel-styleguide/styleguide-embassy-free-mind.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -12,12 +12,32 @@
 <body>  
     <header>
     <div class="header-container">
-        <!-- Hamburger button -->
-        <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
-            <i class="fa-solid fa-bars"></i>
-        </button>
+        <div class="logo-container">
+            <img class="logo" src="./assets/img/logo_white.png">
+        </div>
+        <div class="links-container">
+        <div class="interaction-container">
+            <button id="LightDarkText" class="DarkBtn">
+                <img id="LightDarkIcon" src="./assets/svg/sun.svg" alt="Lichte Modus" />
+            </button>
+            <div class="flags">
+                <div class="englishPage">
+                <img src="https://www.svgrepo.com/show/405643/flag-for-flag-united-kingdom.svg" width="40" />
+            </div>
+            <div class="dutchPage">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1200px-Flag_of_the_Netherlands.svg.png" width="43" />
+            </div>
+                <!-- Hamburger button -->
+                <div class="hamburger-menu">
+                    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
         <nav>
-            <ul class="header_links">
+            <ul class="header-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Tickets</a></li>
                 <li><a href="Catalog.html">Catalogus</a></li>
@@ -25,7 +45,7 @@
                 <li><a href="#">Donatie</a></li>
             </ul>
         </nav>
-        </div>
+      </div>
     </header>
 
 <main style="margin-top: 25px;">
@@ -47,7 +67,7 @@
             <p>Of typ & stuur een email hier beneden:</p>
             <form action=""><label for="">Email adres:<input style="background-color: rgba(255, 255, 255, 0);"  type="email"></label>
             </form>
-            <textarea style="padding: 5px; border: 1px solid var(--color-primary); background-color: rgba(255, 255, 255, 0);" id="email-efm" name="email-efm" rows="15" cols="35"></textarea>
+            <textarea style="padding: 5px; border: 1px solid var(--color-primary); background-color: rgba(255, 255, 255, 0);" id="email-efm" name="email-efm" rows="12" cols="35"></textarea>
             <br>
             <input style="border: 1px solid var(--color-primary); border-radius: 5px; height: 30px; padding-left: 7px; padding-right: 7px; background-color: rgba(255, 255, 255, 0);" id="submit-email" type="submit">
         </section>
@@ -60,7 +80,7 @@
 </main>
 
     <footer>
-        <ul class="page_links">
+        <ul class="page-links">
             <li><a href="#">Adres</a></li>
             <li><a href="#">Openingstijden</a></li>
             <li><a href="Contact.html">Contact</a></li>
